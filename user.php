@@ -2,7 +2,7 @@
 // to connect to databse
 include "connect.php";
 if(isset($_POST["submit"])){
-  $name = $_POST["name "];
+  $name = $_POST["name"];
   $email =$_POST["email"];
   $mobile =$_POST["mobile"];
   $password = $_POST["password"];
@@ -12,7 +12,11 @@ if(isset($_POST["submit"])){
   // to execute the query
   $result = mysqli_query($con, $sql);
   if($result){
-    echo "Data inserted successfuly";
+    // echo "Data inserted successfuly";
+
+    // to redirect to display page after adding new user
+    header('Location: display.php');
+
   }else {
     die(mysqli_error($con));
   }

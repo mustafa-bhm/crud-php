@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,27 +27,39 @@
   </thead>
   <tbody>
     <?php
-    $sql = "Select * from `crud`"
+     include "connect.php";
+    $sql = "Select * from `crud`";
+    $result = mysqli_query($con, $sql);
+    if($result){
+
+      // to
+      while($row=mysqli_fetch_assoc($result)){
+        $id = $row["id"];
+        $name = $row["name"];
+        $email = $row["email"];
+        $mobile = $row["mobile"];
+        $password = $row["password"];
+        echo '
+        <tr>
+      <th scope="row">'.$id.'</th>
+      <td>'.$name.'</td>
+      <td>'.$email.'</td>
+      <td>'.$mobile.'</td>
+      <td>'.$password.'</td>
+      <td> <button class="btn btn-info "> <a href="" class="text-light">UPDATE</a> </button>
+       <button class="btn btn-danger text-light ">  <a href="" class="text-light">DELETE</a> </button> </td>
+
+
+    </tr>
+
+         ';
+      }
+    };
+
 
     ?>
-    <!-- <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr> -->
+
+
   </tbody>
 </table>
 
