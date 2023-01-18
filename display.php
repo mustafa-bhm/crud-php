@@ -32,7 +32,7 @@
     $result = mysqli_query($con, $sql);
     if($result){
 
-      // to
+      //
       while($row=mysqli_fetch_assoc($result)){
         $id = $row["id"];
         $name = $row["name"];
@@ -46,7 +46,7 @@
       <td>'.$email.'</td>
       <td>'.$mobile.'</td>
       <td>'.$password.'</td>
-      <td> <button class="btn btn-info "> <a href="update.php" class="text-light">UPDATE</a> </button>
+      <td> <button class="btn btn-info "> <a href="update.php?updateid='.$id.'" class="text-light">UPDATE</a> </button>
        <button class="btn btn-danger text-light ">  <a href="delete.php?deleteid='.$id.'" class="text-light">DELETE</a> </button> </td>
 
 
