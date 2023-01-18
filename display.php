@@ -46,8 +46,8 @@
       <td>'.$email.'</td>
       <td>'.$mobile.'</td>
       <td>'.$password.'</td>
-      <td> <button class="btn btn-info "> <a href="" class="text-light">UPDATE</a> </button>
-       <button class="btn btn-danger text-light ">  <a href="" class="text-light">DELETE</a> </button> </td>
+      <td> <button class="btn btn-info "> <a href="update.php" class="text-light">UPDATE</a> </button>
+       <button class="btn btn-danger text-light ">  <a href="delete.php?deleteid='.$id.'" class="text-light">DELETE</a> </button> </td>
 
 
     </tr>
